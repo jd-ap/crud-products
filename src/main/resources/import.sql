@@ -1,0 +1,11 @@
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'laptop', 100000, 20);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product A', 99.99, 10);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product B', 89.99, 5);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product C', 79.99, 15);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product D', 69.99, 20);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product E', 59.99, 30);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product F', 49.99, 40);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product G', 39.99, 50);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product H', 29.99, 60);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product I', 19.99, 70);
+INSERT INTO PRODUCTS ("id", "name", "price", "stock") VALUES (NEXTVAL('product_id_seq'), 'Product J', 9.99, 80);
