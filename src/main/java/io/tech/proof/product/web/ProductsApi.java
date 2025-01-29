@@ -1,4 +1,4 @@
-package io.tech.proof;
+package io.tech.proof.product.web;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -20,7 +20,9 @@ public interface ProductsApi {
     //POST /products: Allows the creation of a new product.
     @POST
     @Path("")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    @ResponseStatus(201)
     ProductDto createProduct(ProductDto bodyRequest);
 
     //PUT /products/{id}: Allows updating the details of an existing product.

@@ -1,4 +1,4 @@
-package io.tech.proof;
+package io.tech.proof.product;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +11,7 @@ public interface ProductService {
 
     Product createFrom(Product product);
 
-    Product updateById(Long id, Product product);
+    Optional<Product> updateById(Long id, Product product);
 
     void deleteById(Long id);
 

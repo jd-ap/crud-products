@@ -1,6 +1,8 @@
-package io.tech.proof;
+package io.tech.proof.product.web;
 
+import io.tech.proof.product.ProductService;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.Path;
 
 import java.util.Optional;
@@ -33,17 +35,18 @@ public class ProductsResource implements ProductsApi {
     @Override
     public ProductDto createProduct(ProductDto bodyRequest) {
         return Optional.of(bodyRequest)
+                .filter(ProductDto::isValid)
                 .map(ProductDto::toEntity)
                 .map(productService::createFrom)
                 .map(ProductDto::newInstance)
-                .orElseThrow(); //ToDo: No debe de ejecutarse el lanzamiento de la excepción
+                .orElseThrow(() -> new BadRequestException("Las columnas 'name', 'price', 'stock' no permiten valores nulos (NULL)"));
     }
 
     @Override
     public ProductDto updateProductById(Long id, ProductDto bodyRequest) {
         return Optional.of(bodyRequest)
                 .map(ProductDto::toEntity)
-                .map(it -> productService.updateById(id, it))
+                .flatMap(it -> productService.updateById(id, it))
                 .map(ProductDto::newInstance)
                 .orElseThrow();
     }

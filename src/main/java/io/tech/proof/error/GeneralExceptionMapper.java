@@ -1,4 +1,4 @@
-package io.tech.proof;
+package io.tech.proof.error;
 
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
@@ -14,7 +14,7 @@ public class GeneralExceptionMapper implements ExceptionMapper<Exception> {
 
     @Override
     public Response toResponse(Exception e) {
-        var error = new ErrorDto("undefined", e.getMessage(), new String[]{});
+        var error = new ErrorDto("undefined", e.getMessage(), null);
 
         logger.log(Level.SEVERE, e.getMessage());
         e.printStackTrace();
